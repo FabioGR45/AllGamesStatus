@@ -1,0 +1,19 @@
+mat-accordion,
+mat-expansion-panel-header{
+  font-size: 1.25em;
+  background: rgb(255, 197, 51);
+  margin-left: 10px;
+  color: #000000;
+  font-weight: 500;
+}
+
+mat-expansion-panel{
+    background-color: rgb(224, 165, 13);
+    margin-left: 100px;
+    margin-right: 100px;
+
+}   
+
+mat-panel-title{
+    /* padding-left: 10px */
+}

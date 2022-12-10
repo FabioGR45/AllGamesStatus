@@ -1,0 +1,14 @@
+    <mat-expansion-panel hideToggle>
+        [gameDirective]="game.promotion";
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ this.game.title }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul>
+            <li *ngIf="game.description"><b>Descrição: </b> {{ game.description }}</li>
+            <li><b>Data de lançamento: </b> {{ game.releaseDate | date:"dd/MM/yyyy" }}</li>
+            <li><b>Preço: </b> {{ game.price | currency:"BRL" | uppercase}}</li>
+            <li><b>Promoção: </b> {{ game.promotion }}</li>
+        </ul>    
+    </mat-expansion-panel>

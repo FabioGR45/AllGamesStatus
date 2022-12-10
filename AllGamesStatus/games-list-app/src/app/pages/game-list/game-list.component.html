@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Game Status</title>
+</head>
+<body>
+        <mat-accordion>
+                <div class="game-container">
+                        <h1 class="welcome-text">Bem-vindo ao App de Lista de jogos!</h1>
+                        <h3 class="sub-welcome-text">Todas as informações a respeito dos seus jogos favoritos estão aqui!</h3>
+                </div>
+        
+            <app-game-item [gameDirective]="game.promotion" *ngFor="let game of gameList" [game]="game"></app-game-item>
+        </mat-accordion>
+
+
+</body>
+</html>
+
