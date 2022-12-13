@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatInputModule} from '@angular/material/input';
+// import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [],
@@ -11,7 +15,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
   ],
   exports: [
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatInputModule
+    // MatDatepickerModule
   ]
 })
 export class MaterialModule { }
