@@ -1,4 +1,8 @@
 export default class Game{
+
+    static lastId: number = 4;
+
+    id: number;
     title: string;
     description?: string;
     releaseDate: Date;
@@ -11,5 +15,11 @@ export default class Game{
         this.releaseDate = releaseDate;
         this.price = price;
         this.promotion = promotion;
+
+        this.id = Game.updateLastId();
+    }
+
+    static updateLastId(id?: number): number{
+        return ++this.lastId;
     }
 }

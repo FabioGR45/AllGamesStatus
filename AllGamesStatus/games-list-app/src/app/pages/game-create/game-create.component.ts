@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import { GameService } from './../../services/game.service';
+
 import Game from 'src/app/models/Game';
 
 @Component({
@@ -12,6 +14,10 @@ export class GameCreateComponent {
   newGame: Game = new Game("Novo jogo");
 
   gameForm?: FormGroup;
+
+  constructor(private gameService: GameService){ 
+    
+  }
 
   ngOnInit(){
     this.gameForm = new FormGroup({
@@ -42,8 +48,10 @@ export class GameCreateComponent {
       promotion: this.gameForm?.controls['promotion'].value
     })
 
-    this.newGame = this.gameForm?.value;
+    this.newGame = {id: this.newGame.id, ...this.gameForm?.value};
 
-    console.log(this.newGame);
+    this.gameService.postGame(this.newGame);
+
+    // console.log(this.newGame.id);
   }
 }

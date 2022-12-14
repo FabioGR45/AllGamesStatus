@@ -6,6 +6,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
@@ -17,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatCheckboxModule,
     MatInputModule
     // MatDatepickerModule
