@@ -59,8 +59,9 @@ export class GameService {
 
   }
 
-  updateGame(){
-
+  updateGame(id: number, updatedGame: Game){
+    const index = this.gameList.findIndex((game) => game.id == id);
+    this.gameList[index] = updatedGame;
   }
 
   deleteGame(id: number){

@@ -2,17 +2,23 @@
 
 .header{
     background-color: #000E40;
-    justify-content: center;
     margin-bottom: 50px;
     justify-content: space-between;
+}
+
+.img-header{
+    height: 50px;
+    margin-left: -16px;
 }
 
 footer {
     background-color: #000E40;
     height:50px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0%;
+    z-index: 1;
+    margin-top: 100px;
 }
 
 .footer-text{ 
@@ -30,6 +36,7 @@ footer {
     font-weight: 700;
     margin-left: 20px;
     font-size: 30px;
+    margin-top: -20px;
 }
 
 .header-button{

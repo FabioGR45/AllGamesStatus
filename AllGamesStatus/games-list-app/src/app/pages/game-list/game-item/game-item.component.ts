@@ -1,5 +1,7 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ViewChild, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { GameService } from './../../../services/game.service';
 import Game from 'src/app/models/Game';
 
@@ -12,6 +14,8 @@ export class GameItemComponent implements OnChanges{
 
   @Input() game?: Game;
 
+  @ViewChild('dialogTemplate') dialogTemplate?: TemplateRef<any>;
+
   // @Input() game: Game = {
   //   id: 0,
   //   title: "Jogo não especificado",
@@ -21,7 +25,7 @@ export class GameItemComponent implements OnChanges{
   //   promotion: false
   // }
 
-  constructor(private gameService: GameService) {
+  constructor(private gameService: GameService, public dialog: MatDialog) {
     // this.task.title = "Tarefa Não Especificada";
     // this.task.description = "Sem descrição";
     // this.task.dueDate = new Date();
@@ -40,6 +44,14 @@ export class GameItemComponent implements OnChanges{
     if (this.game) this.gameService.deleteGame(this.game.id);
   }
 
+  openDialog() {
+    if (this.dialogTemplate) {
+      this.dialog.open(this.dialogTemplate, {
+        data: { title: "Atualizar jogo" }
+      });
+    }
+  }
+  
   ngOnChanges(): void {
     console.log('Game List Item has changed!');
   }
